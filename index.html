@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formular GDPR - Inchiriere gard Zira Marketing</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #333;
+      padding: 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+    form {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      margin-top: 15px;
+      color: #34495e;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 1em;
+      border-radius: 4px;
+      border: 1.5px solid #ccc;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease-in-out;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+    .note {
+      font-size: 0.875em;
+      color: #7f8c8d;
+      margin-top: 3px;
+    }
+    fieldset {
+      border: 1px solid #ddd;
+      padding: 15px 20px 25px 20px;
+      margin-top: 20px;
+      border-radius: 6px;
+      background: #fcfcfc;
+    }
+    legend {
+      font-weight: 700;
+      color: #2980b9;
+      padding: 0 8px;
+      font-size: 1.1em;
+    }
+    .gps-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+    }
+    .gps-col {
+      flex: 1 1 0%;
+    }
+    .gps-btn {
+      min-width: 144px;
+      margin-top: 25px;
+      background-color: #16a085;
+      color: white;
+      border: none;
+      padding: 10px 10px;
+      border-radius: 4px;
+      font-size: 0.96em;
+      font-weight: 600;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .gps-btn:hover {
+      background-color: #12806a;
+    }
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    button {
+      flex: 1 1 auto;
+      background-color: #2980b9;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 6px;
+      color: white;
+      font-weight: 700;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+    }
+    button:hover:not(:disabled) {
+      background-color: #1f6391;
+    }
+    button:disabled, .gps-btn:disabled {
+      background-color: #95a5a6 !important;
+      cursor: not-allowed;
+    }
+    .button-reset {
+      background-color: #e74c3c;
+    }
+    .button-reset:hover {
+      background-color: #c0392b;
+    }
+    .success-message {
+      background: #d4efdf;
+      color: #145a32;
+      padding: 12px 15px;
+      margin-top: 15px;
+      border-radius: 5px;
+      border: 1px solid #27ae60;
+      font-weight: 600;
+    }
+    .error-message {
+      color: #c0392b;
+      font-size: 0.9em;
+      margin-top: 4px;
+    }
+    @media (max-width: 650px) {
+      .gps-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .gps-btn {
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
+    @media (max-width: 450px) {
+      .buttons {
+        flex-direction: column;
+      }
+      button {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Acord GDPR - Închiriere gard către Zira Marketing SRL</h1>
+  <form id="gdprForm" novalidate>
+    <fieldset>
+      <legend>Adresa completă a imobilului</legend>
+      <label for="street">Stradă și număr <sup>*</sup></label>
+      <input type="text" id="street" name="street" placeholder="Ex: Str. Principală, Nr. 12" required />
+
+      <label for="city">Localitate <sup>*</sup></label>
+      <input type="text" id="city" name="city" placeholder="Ex: Comuna X" required />
+
+      <label for="county">Județ <sup>*</sup></label>
+      <input type="text" id="county" name="county" placeholder="Ex: Alba" required />
+    </fieldset>
+
+    <fieldset>
+      <legend>Poziția GPS a imobilului</legend>
+      <div class="gps-row">
+        <div class="gps-col">
+          <label for="latitude">Latitudine (ex: 46.7712) <sup>*</sup></label>
+          <input
+            type="number"
+            id="latitude"
+            name="latitude"
+            step="any"
+            min="-90"
+            max="90"
+            placeholder="Ex: 46.7712"
+            required
+          />
+        </div>
+        <div class="gps-col">
+          <label for="longitude">Longitudine (ex: 23.6236) <sup>*</sup></label>
+          <input
+            type="number"
+            id="longitude"
+            name="longitude"
+            step="any"
+            min="-180"
+            max="180"
+            placeholder="Ex: 23.6236"
+            required
+          />
+        </div>
+        <button class="gps-btn" type="button" id="getGpsBtn" tabindex="0">Completează automat GPS</button>
+      </div>
+      <div class="note" id="gpsStatus"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Date proprietar / locatar cu drept de folosință</legend>
+
+      <label for="fullName">Nume complet <sup>*</sup></label>
+      <input type="text" id="fullName" name="fullName" placeholder="Nume Prenume" required />
+
+      <label for="phone">Telefon <sup>*</sup></label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+40 701 234 567"
+        pattern="^\+?[\d\s-]{7,15}$"
+        required
+      />
+      <small class="note">Format recomandat: +40 7xx xxx xxx</small>
+
+      <label for="email">Email <sup>*</sup></label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="exemplu@domeniu.com"
+        required
+      />
+
+      <label for="contactPreference">Preferință contact <sup>*</sup></label>
+      <select id="contactPreference" name="contactPreference" required>
+        <option value="" disabled selected>Alege o opțiune</option>
+        <option value="email">Email</option>
+        <option value="telefon">Telefon</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Acord GDPR</legend>
+      <p>
+        Prin completarea acestui formular, îmi dau consimțământul ca Zira Marketing SRL să prelucreze datele mele cu caracter personal strict în scopul închirierii gardului proprietății. Înțeleg că voi fi contactat prin mijlocul ales pentru întocmirea și semnarea contractului final.
+      </p>
+      <label>
+        <input type="checkbox" id="gdprConsent" name="gdprConsent" required />
+        Sunt de acord cu prelucrarea datelor mele personale conform GDPR <sup>*</sup>
+      </label>
+    </fieldset>
+
+    <div class="buttons">
+      <button type="button" id="saveBtn">Salvează local</button>
+      <button type="button" id="exportBtn">Exportă datele JSON</button>
+      <button type="button" id="emailBtn">Trimite email</button>
+      <button type="reset" class="button-reset">Resetează formular</button>
+    </div>
+    <div id="message" role="alert" aria-live="polite"></div>
+  </form>
+
+  <script>
+    (function () {
+      const form = document.getElementById("gdprForm");
+      const messageEl = document.getElementById("message");
+      const saveBtn = document.getElementById("saveBtn");
+      const exportBtn = document.getElementById("exportBtn");
+      const getGpsBtn = document.getElementById("getGpsBtn");
+      const gpsStatus = document.getElementById("gpsStatus");
+      const latInput = document.getElementById("latitude");
+      const lngInput = document.getElementById("longitude");
+      const emailBtn = document.getElementById("emailBtn");
+
+      // Funcție simplă de afișare mesaj
+      function showMessage(msg, isSuccess = true) {
+        messageEl.textContent = msg;
+        messageEl.className = isSuccess ? "success-message" : "error-message";
+      }
+
+      // Mesaje GPS
+      function showGpsStatus(msg, isOk = false) {
+        gpsStatus.textContent = msg;
+        gpsStatus.style.color = isOk ? "#16a085" : "#c0392b";
+      }
+
+      // Validare suplimentară pentru pattern telefon
+      function isPhoneValid(phone) {
+        const phonePattern = /^\+?[\d\s-]{7,15}$/;
+        return phonePattern.test(phone.trim());
+      }
+
+      // Salvează datele în localStorage
+      function saveToLocal() {
+        if (!form.reportValidity()) {
+          showMessage("Te rog completează corect toate câmpurile obligatorii.", false);
+          return;
+        }
+        // check telefono by pattern
+        const phoneInput = form.phone.value;
+        if (!isPhoneValid(phoneInput)) {
+          showMessage("Introdu un număr de telefon valid.", false);
+          form.phone.focus();
+          return;
+        }
+
+        const data = {
+          address: {
+            street: form.street.value.trim(),
+            city: form.city.value.trim(),
+            county: form.county.value.trim(),
+          },
+          gps: {
+            latitude: parseFloat(form.latitude.value.trim()),
+            longitude: parseFloat(form.longitude.value.trim()),
+          },
+          owner: {
+            fullName: form.fullName.value.trim(),
+            phone: phoneInput.trim(),
+            email: form.email.value.trim(),
+            contactPreference: form.contactPreference.value,
+          },
+          gdprConsent: form.gdprConsent.checked,
+          timestamp: new Date().toISOString(),
+        };
+
+        localStorage.setItem("ziraGardFormData", JSON.stringify(data));
+        showMessage("Datele au fost salvate local cu succes.");
+      }
+
+      // Exportă JSON ca fișier descărcabil
+      function exportData() {
+        const savedData = localStorage.getItem("ziraGardFormData");
+        if (!savedData) {
+          showMessage("Nu există date salvate local pentru export.", false);
+          return;
+        }
+
+        const blob = new Blob([savedData], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `zira_gard_inchiriere_${new Date().toISOString().slice(0,10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        showMessage("Fișierul JSON a fost exportat. Vei putea să-l atașezi la un email.");
+      }
+
+      // Încarcă datele salvate în formular (optional)
+      function loadFromLocal() {
+        const savedData = localStorage.getItem("ziraGardFormData");
+        if (!savedData) return;
+
+        try {
+          const data = JSON.parse(savedData);
+
+          form.street.value = data.address.street || "";
+          form.city.value = data.address.city || "";
+          form.county.value = data.address.county || "";
+
+          form.latitude.value = data.gps.latitude || "";
+          form.longitude.value = data.gps.longitude || "";
+
+          form.fullName.value = data.owner.fullName || "";
+          form.phone.value = data.owner.phone || "";
+          form.email.value = data.owner.email || "";
+          form.contactPreference.value = data.owner.contactPreference || "";
+
+          form.gdprConsent.checked = data.gdprConsent || false;
+        } catch (e) {
+          // ignore parsing errors
+        }
+      }
+
+      // Obține automat coordonatele GPS
+      function fillGpsAutomatic() {
+        if (!navigator.geolocation) {
+          showGpsStatus("Geolocația nu este suportată de acest browser.", false);
+          return;
+        }
+        showGpsStatus("Se obține poziția GPS...");
+
+        getGpsBtn.disabled = true;
+
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            latInput.value = position.coords.latitude.toFixed(6);
+            lngInput.value = position.coords.longitude.toFixed(6);
+            showGpsStatus("Coordonatele au fost completate automat.", true);
+            getGpsBtn.disabled = false;
+          },
+          function (error) {
+            let errMsg = "Nu s-a putut obține locația: ";
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                errMsg += "Ai refuzat accesul la locație.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                errMsg += "Poziția nu este disponibilă.";
+                break;
+              case error.TIMEOUT:
+                errMsg += "Timeout la obținerea poziției.";
+                break;
+              default:
+                errMsg += "Eroare necunoscută.";
+            }
+            showGpsStatus(errMsg, false);
+            getGpsBtn.disabled = false;
+          },
+          { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
+        );
+      }
+
+      // Creare și deschidere mailto cu datele JSON în body
+      function sendMail() {
+        if (!form.reportValidity()) {
+          showMessage("Completează corect toate câmpurile obligatorii înainte de a trimite email.", false);
+          return;
+        }
+
+        const street = form.street.value.trim();
+        const city = form.city.value.trim();
+        const county = form.county.value.trim();
+
+        if (!street || !city || !county) {
+          showMessage("Completează mai întâi adresa completă pentru a trimite email.", false);
+          return;
+        }
+
+        // Construim obiectul JSON cu toate datele actuale din formular
+        const data = {
+          address: {
+            street: street,
+            city: city,
+            county: county,
+          },
+          gps: {
+            latitude: parseFloat(form.latitude.value.trim()),
+            longitude: parseFloat(form.longitude.value.trim()),
+          },
+          owner: {
+            fullName: form.fullName.value.trim(),
+            phone: form.phone.value.trim(),
+            email: form.email.value.trim(),
+            contactPreference: form.contactPreference.value,
+          },
+          gdprConsent: form.gdprConsent.checked,
+          timestamp: new Date().toISOString(),
+        };
+
+        const to = "zira.marketing.srl@gmail.com";
+        const subject = encodeURIComponent(`[Formular] ${city}, ${county} - ${street}`);
+
+        // JSON formatat frumos pentru a fi ușor de citit în corpul email
+        const jsonString = JSON.stringify(data, null, 2);
+
+        const bodyText =
+          "Acord GDPR + Acord gard spre inchiriere sau concesiune\n\n" +
+          "Datele completate în formular:\n" +
+          jsonString + "\n\n" +
+          "Acest email a fost trimis de pe formularul pe_gard.";
+
+        const body = encodeURIComponent(bodyText);
+
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      }
+
+      saveBtn.addEventListener("click", saveToLocal);
+      exportBtn.addEventListener("click", exportData);
+      getGpsBtn.addEventListener("click", fillGpsAutomatic);
+      emailBtn.addEventListener("click", sendMail);
+
+      form.addEventListener("reset", () => {
+        messageEl.textContent = "";
+        gpsStatus.textContent = "";
+      });
+
+      window.onload = loadFromLocal;
+    })();
+  </script>
+</body>
+</html>
