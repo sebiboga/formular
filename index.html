@@ -244,6 +244,14 @@
         <option value="email">Email</option>
         <option value="telefon">Telefon</option>
       </select>
+
+
+      <label for="contractPreference">Preferință contract <sup>*</sup></label>
+      <select id="contractPreference" name="contractPreference" required>
+        <option value="" disabled selected>Alege o opțiune</option>
+        <option value="comodat">comodat (gratuit)</option>
+        <option value="inchiriere">inchiriere</option>
+      </select>
     </fieldset>
 
     <fieldset>
@@ -325,6 +333,7 @@
             phone: phoneInput.trim(),
             email: form.email.value.trim(),
             contactPreference: form.contactPreference.value,
+            contractPreference: form.contractPreference.value,
           },
           gdprConsent: form.gdprConsent.checked,
           timestamp: new Date().toISOString(),
@@ -374,6 +383,7 @@
           form.phone.value = data.owner.phone || "";
           form.email.value = data.owner.email || "";
           form.contactPreference.value = data.owner.contactPreference || "";
+          form.contractPreference.value = data.owner.contractPreference || "";
 
           form.gdprConsent.checked = data.gdprConsent || false;
         } catch (e) {
@@ -452,6 +462,7 @@
             phone: form.phone.value.trim(),
             email: form.email.value.trim(),
             contactPreference: form.contactPreference.value,
+            contractPreference: form.contractPreference.value,
           },
           gdprConsent: form.gdprConsent.checked,
           timestamp: new Date().toISOString(),
